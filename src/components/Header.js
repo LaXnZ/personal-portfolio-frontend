@@ -8,7 +8,7 @@ const Header = () => {
           {/* Content for small devices */}
         </div>
         <div className="nav">
-          Header
+
         </div>
       </div>
     </header>
