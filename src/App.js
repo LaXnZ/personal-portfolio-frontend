@@ -7,21 +7,23 @@ import Services from "./components/Services";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Blogs from "./components/Blogs";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
-   <>
-    <BrowserRouter>
-      <Header />
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/blogs" element={<Blogs />} />
-      </Routes>
-    </BrowserRouter>
-   </>
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <BrowserRouter>
+        <Header />
+        <NavBar />
+        <Routes style={{ flex: 1 }}>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blogs" element={<Blogs />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 }
