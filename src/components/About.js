@@ -1,49 +1,48 @@
-import React from 'react';
+import React from "react";
 
 const About = () => {
   return (
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="aboutMeImg">
-                  <img src="./images/gifs/about.jpg" alt="about me" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="about-me">
-                  <h5>About me</h5>
-                  <div class="aboutHorizontalLine"></div>
-                  <p>
-                    I enjoy creating things that live on the internet, whether
-                    that be websites, applications, or anything in between. My
-                    goal is to always build products that provide pixel-perfect,
-                    performant experiences.
-                  </p>
-                  <p>
-                    Familiarity with Front End High level programming such as
-                    HTML, CSS, ReactJS, XML, jQuery and JSON. Server Side coding
-                    skills Node.js and Php Frameworks( Express.js,Laravel).
-                  </p>
-                  <p>
-                    Understanding of data structures algorithms including data
-                    migration, transformation and analysis. Deploying, managing,
-                    and operating scalable, highly available, and fault tolerant
-                    systems on AWS.
-                  </p>
-                  <p>
-                    Excellent communication skills on both Swahili and English.
-                  </p>
-                </div>
-              </div>
+    <section id="about" style={{ paddingTop: "100px", paddingBottom: "50px" }}>
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-md-6">
+            <div className="about-me">
+              <div className="aboutHorizontalLine"></div>
+              <h1 style={{ fontSize: 24 }}>Hi, I am</h1>
+              <h1 style={{ color: "orange", fontSize: 32 }}>Maverick Edward</h1>
+              <h3 style={{ fontSize: 80, fontWeight: "bold" }}>UI & UX </h3>
+              <h3
+                style={{
+                  fontSize: 80,
+                  fontWeight: "bold",
+                  paddingLeft: "200px",
+                }}
+              >
+                Designer
+              </h3>
+              <p
+                style={{
+                  fontSize: 21,
+                  fontWeight: "initial",
+                  textAlign: "justify",
+                }}
+              >
+                I enjoy creating things that live on the internet, whether that
+                be websites, applications, or anything in between. My goal is to
+                always build products that provide pixel-perfect, performant
+                experiences.
+              </p>
+            </div>
+          </div>
+          <div className="col-md-6 pl-5">
+            <div className="aboutMeImg">
+              <img src="/about.png" alt="about me" style={{ width: "80%" }} />
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default About;
