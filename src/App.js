@@ -10,6 +10,7 @@ import Blogs from "./components/Blogs";
 import Footer from "./components/Footer";
 import AdminDashboard from "./components/AdminDashboard";
 import BlogPost from "./components/BlogPost";
+import Projects from "./components/Projects";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:id" element={<BlogPost />} />
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
         <Footer />
       </BrowserRouter>
