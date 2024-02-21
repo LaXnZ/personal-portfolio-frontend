@@ -2,40 +2,85 @@ import React from "react";
 
 const About = () => {
   return (
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="aboutMeImg">
-                  <img src="./images/gifs/about.jpg" alt="about me" />
+    <section id="about" style={{ paddingTop: "100px", paddingBottom: "50px" }}>
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-md-6 pl-5">
+            <div className="aboutMeImg">
+              <img
+                src="/about-person.png"
+                alt="about me"
+                style={{ width: "80%" }}
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="about-me">
+              <h3 style={{ fontSize: 60, fontWeight: "bold",paddingBottom:"20px" }}>About Me</h3>
+              <p
+                style={{
+                  fontSize: 21,
+                  fontWeight: "initial",
+                  textAlign: "justify",
+                }}
+              >
+                I enjoy creating things that live on the internet, whether that
+                be websites, applications, or anything in between. My goal is to
+                always build products that provide pixel-perfect, performant
+                experiences.
+              </p>
+              <div>
+                <div className="mb-3">
+                  <span style={{fontWeight:"bold"}}>HTML</span>
+                  <div className="progress" style={{ width: "100%" }}>
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      style={{ width: "80%", backgroundColor: "#ff6300" }}
+                      aria-valuenow="70"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="about-me">
-                  <h5>About me</h5>
-                  <div class="aboutHorizontalLine"></div>
-                  <p>
-                    I enjoy creating things that live on the internet, whether
-                    that be websites, applications, or anything in between. My
-                    goal is to always build products that provide pixel-perfect,
-                    performant experiences.
-                  </p>
-                  <p>
-                    Familiarity with Front End High level programming such as
-                    HTML, CSS, ReactJS, XML, jQuery and JSON. Server Side coding
-                    skills Node.js and Php Frameworks( Express.js,Laravel).
-                  </p>
-                  <p>
-                    Understanding of data structures algorithms including data
-                    migration, transformation and analysis. Deploying, managing,
-                    and operating scalable, highly available, and fault tolerant
-                    systems on AWS.
-                  </p>
-                  <p>
-                    Excellent communication skills on both Swahili and English.
-                  </p>
+                <div className="mb-3">
+                  <span style={{fontWeight:"bold"}}>CSS</span>
+                  <div className="progress" style={{ width: "100%" }}>
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      style={{ width: "50%", backgroundColor: "#ff6300" }}
+                      aria-valuenow="80"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <span style={{fontWeight:"bold"}}>JavaScript</span>
+                  <div className="progress" style={{ width: "100%" }}>
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      style={{ width: "100%", backgroundColor: "#ff6300" }}
+                      aria-valuenow="70"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <span style={{fontWeight:"bold"}}>React</span>
+                  <div className="progress" style={{ width: "100%" }}>
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      style={{ width: "90%", backgroundColor: "#ff6300" }}
+                      aria-valuenow="70"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
