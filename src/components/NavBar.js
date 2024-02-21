@@ -79,7 +79,7 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/blog"
+                to="/blogs"
                 className="nav-link"
                 activeClassName="active"
                 style={{

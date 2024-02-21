@@ -57,7 +57,7 @@ const Footer = () => {
                 <li className="nav-item">
                   <NavLink
                     className="nav-link"
-                    to="/blog"
+                    to="/blogs"
                     style={{ color: "black" }}
                   >
                     Blogs
