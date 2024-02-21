@@ -1,42 +1,108 @@
-import React from 'react';
+import React, { useState } from "react";
+import axios from "axios";
 
 const Contact = () => {
-  return (
-    <div class="contactme" id="contact">
-      <div class="contactOverlay">
-        <div class="container">
-          <div class="form">
-            <form action="" onSubmit="">
-              <div class="formWord">
-                <h2>Say Hello!</h2>
-                <span>Full Name</span>
-                <br />
-                <input class="input100" type="text" name="fullName" required />
-                <br />
-                <span>Phone Number</span>
-                <br />
-                <input class="input100" type="text" name="phone" required />
-                <br />
-                <span>Enter Email</span>
-                <br />
-                <input class="input100" type="text" name="email" required />
-                <br />
-              </div>
-              <div class="formWord">
-                <span>Message</span>
-                <br />
-                <textarea name="message" required></textarea>
-                <br />
-                <button>SUBMIT</button>
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    purpose: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
 
-                {/* <div class="row">{showResults ? <Results /> : null}</div> */}
+  const { fullName, email, purpose } = formData;
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/api/contacts",
+        formData
+      );
+      console.log("Contact form submitted:", response.data);
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+    }
+  };
+
+  return (
+    <div
+      className="container d-flex justify-content-center align-items-center"
+      style={{ minHeight: "70vh" }}
+    >
+      <div className="w-50">
+        <h1 style={{ fontWeight: "bold", textAlign: "center" }}>
+          Let's Design Together
+        </h1>
+        {!submitted ? (
+          <>
+            <p className="text-center">
+              Please fill out the form below to connect with me.
+            </p>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label htmlFor="fullName" className="form-label">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="fullName"
+                  name="fullName"
+                  value={fullName}
+                  onChange={handleChange}
+                  required
+                />
               </div>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="purpose" className="form-label">
+                  Purpose of Connecting (in brief)
+                </label>
+                <textarea
+                  className="form-control"
+                  id="purpose"
+                  name="purpose"
+                  rows="3"
+                  value={purpose}
+                  onChange={handleChange}
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="btn btn-primary w-100"
+                style={{ backgroundColor: "#ff6300", borderColor: "#ff6300" }}
+              >
+                Contact Me
+              </button>
             </form>
+          </>
+        ) : (
+          <div className="alert alert-success text-center" role="alert">
+            Thank you! Your message has been submitted successfully.
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default Contact;
