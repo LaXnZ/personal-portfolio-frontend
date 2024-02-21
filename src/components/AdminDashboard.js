@@ -28,7 +28,7 @@ const AdminDashboard = () => {
         title,
         content,
         images,
-        tags: tags.split(",").map(tag => tag.trim()), // Split tags by comma and trim whitespace
+        tags: tags.split(",").map((tag) => tag.trim()), // Split tags by comma and trim whitespace
       });
       fetchBlogs();
     } catch (error) {
@@ -51,7 +51,7 @@ const AdminDashboard = () => {
         title: title,
         content: content,
         images: images,
-        tags: tags.split(",").map(tag => tag.trim()), // Split tags by comma and trim whitespace
+        tags: tags.split(",").map((tag) => tag.trim()), // Split tags by comma and trim whitespace
       };
 
       const response = await axios.put(
@@ -88,8 +88,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="container">
-        <h2 className="mt-4 mb-3 fw-bold text-uppercase">Admin Dashboard</h2>
-
+      <h2 className="mt-4 mb-3 fw-bold text-uppercase">Admin Dashboard</h2>
 
       {/* Create Blog Form */}
       <form onSubmit={handleCreateBlog} className="mb-4">
@@ -126,7 +125,14 @@ const AdminDashboard = () => {
             className="form-control"
           ></textarea>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button
+          type="submit"
+          className="btn btn-primary"
+          style={{
+            backgroundColor: "#ff6300",
+            borderColor: "#ff6300",
+          }}
+        >
           Create Blog
         </button>
       </form>
@@ -176,7 +182,9 @@ const AdminDashboard = () => {
                   ></textarea>
                 ) : (
                   blog.tags.map((tag, index) => (
-                    <div key={index} className="tag btn btn-light ml-1">{tag}</div>
+                    <div key={index} className="tag btn btn-light ml-1">
+                      {tag}
+                    </div>
                   ))
                 )}
               </td>

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -10,30 +11,50 @@ const Blogs = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/blogs');
+      const response = await axios.get("http://localhost:3001/api/blogs");
       setBlogs(response.data.blogs);
     } catch (error) {
-      console.error('Error fetching blogs:', error);
+      console.error("Error fetching blogs:", error);
     }
   };
 
   return (
     <div className="container" id="blogs">
       <div className="article">
-        <h2>Recent Work</h2>
+        <h2 className="mb-4">Recent Work</h2>
         <hr />
-        <div className="rows">
+        <div className="row">
           {blogs.map((blog) => (
-            <div key={blog._id} className="shop col-lg-3 col-md-4 col-sm-6">
-              <div className="shopBack">
-                {/* <img src={blog.image} alt="recent" /> */}
-                <div className="shoplebal">
-                  <a href={`/blogs/${blog._id}`}>Read More</a>
+            <div key={blog._id} className="col-lg-4 col-md-6 mb-4">
+              <div className="card h-100">
+                <div className="card-body">
+                  {/* Replace the image tag with your blog image */}
+                  {/* <img src={blog.image} className="card-img-top" alt="Blog" /> */}
+                  <h5 className="card-title">{blog.title}</h5>
+                  <p className="card-text">{blog.content}</p>
+                  <div className="d-flex flex-wrap">
+                    {blog.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="badge bg-secondary me-1 mb-1"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="shoptext">
-                <p>{blog.title}</p>
-                <h3>{blog.content}</h3>
+                <div className="card-footer">
+                  <Link
+                    to={`/blogs/${blog._id}`}
+                    className="btn btn-primary"
+                    style={{
+                      backgroundColor: "#ff6300",
+                      borderColor: "#ff6300",
+                    }}
+                  >
+                    Read More
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
