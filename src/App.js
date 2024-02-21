@@ -8,10 +8,13 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Blogs from "./components/Blogs";
 import Footer from "./components/Footer";
+import AdminDashboard from "./components/AdminDashboard";
 
 export default function App() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+    <div
+      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+    >
       <BrowserRouter>
         <Header />
         <NavBar />
@@ -21,6 +24,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
         <Footer />
       </BrowserRouter>

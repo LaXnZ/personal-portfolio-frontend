@@ -15,32 +15,57 @@ const Footer = () => {
                 style={{ maxWidth: "60%", height: "auto" }}
               />
             </div>
-            <div className="col-md-4 text-center">
+            <div className="col-md-5 text-center">
               {/* Navigation Pages */}
               <ul className="nav justify-content-center">
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/home" style={{ color: "black" }}>
-                    Home
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/about" style={{ color: "black" }}>
+                  <NavLink
+                    className="nav-link"
+                    to="/about"
+                    style={{ color: "black" }}
+                  >
                     About
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/services" style={{ color: "black" }}>
+                  <NavLink
+                    className="nav-link"
+                    to="/services"
+                    style={{ color: "black" }}
+                  >
                     Services
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/contact" style={{ color: "black" }}>
-                    Contact
+                  <NavLink
+                    className="nav-link"
+                    to="/projects"
+                    style={{ color: "black" }}
+                  >
+                    Projects
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link"
+                    to="/testimonials"
+                    style={{ color: "black" }}
+                  >
+                    Testimonials
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link"
+                    to="/blog"
+                    style={{ color: "black" }}
+                  >
+                    Blogs
                   </NavLink>
                 </li>
               </ul>
             </div>
-            <div className="col-md-4 text-right">
+            <div className="col-md-3 text-right">
               {/* Social Media Icons */}
               <a
                 href="https://www.linkedin.com/"
@@ -101,9 +126,9 @@ const Footer = () => {
             <div className="col">
               {/* Copyright */}
               <p className="text-center">
-  &copy; 2023 <span style={{ color: "orange" }}>Maverick</span> All Rights Reserved, Inc.
-</p>
-
+                &copy; 2023 <span style={{ color: "orange" }}>Maverick</span>{" "}
+                All Rights Reserved, Inc.
+              </p>
             </div>
           </div>
         </div>
