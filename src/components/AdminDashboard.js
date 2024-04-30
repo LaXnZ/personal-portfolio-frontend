@@ -20,7 +20,7 @@ const AdminDashboard = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get("https://personal-portfolio-backend-6pbq.onrender.com/blogs");
+      const response = await axios.get("https://personal-portfolio-backend-6pbq.onrender.com/api/blogs");
       setBlogs(response.data.blogs);
     } catch (error) {
       console.error("Error fetching blogs:", error);
@@ -29,7 +29,7 @@ const AdminDashboard = () => {
 
   const handleCreateBlog = async () => {
     try {
-      await axios.post("https://personal-portfolio-backend-6pbq.onrender.com/blogs", {
+      await axios.post("https://personal-portfolio-backend-6pbq.onrender.com/api/blogs", {
         title,
         content,
         images,
@@ -43,7 +43,7 @@ const AdminDashboard = () => {
 
   const handleDeleteBlog = async (id) => {
     try {
-      await axios.delete(`https://personal-portfolio-backend-6pbq.onrender.com/blogs/${id}`);
+      await axios.delete(`https://personal-portfolio-backend-6pbq.onrender.com/blogs/api/${id}`);
       fetchBlogs();
     } catch (error) {
       console.error("Error deleting blog:", error);
@@ -60,7 +60,7 @@ const AdminDashboard = () => {
       };
 
       const response = await axios.put(
-        `https://personal-portfolio-backend-6pbq.onrender.com/blogs/${id}`,
+        `https://personal-portfolio-backend-6pbq.onrender.com/blogs/api/${id}`,
         updatedBlog
       );
 

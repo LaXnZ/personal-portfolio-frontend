@@ -19,7 +19,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://personal-portfolio-backend-6pbq.onrender.com/contacts",
+        "https://personal-portfolio-backend-6pbq.onrender.com/api/contacts",
         formData
       );
       console.log("Contact form submitted:", response.data);

@@ -11,7 +11,7 @@ const Blogs = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/blogs");
+      const response = await axios.get("https://personal-portfolio-backend-6pbq.onrender.com/api/blogs");
       setBlogs(response.data.blogs);
     } catch (error) {
       console.error("Error fetching blogs:", error);
