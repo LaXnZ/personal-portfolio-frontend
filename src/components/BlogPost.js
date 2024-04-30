@@ -12,7 +12,7 @@ const BlogPost = () => {
 
   const fetchBlog = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/api/blogs/${id}`);
+      const response = await axios.get(`https://personal-portfolio-backend-6pbq.onrender.com/blogs/${id}`);
       setBlog(response.data);
     } catch (error) {
       console.error('Error fetching blog:', error);

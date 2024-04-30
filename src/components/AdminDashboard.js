@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const BACKEND_URL = process.env.BACKEND_URL;
 
 const AdminDashboard = () => {
   const [blogs, setBlogs] = useState([]);
@@ -15,7 +20,7 @@ const AdminDashboard = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/blogs");
+      const response = await axios.get("https://personal-portfolio-backend-6pbq.onrender.com/blogs");
       setBlogs(response.data.blogs);
     } catch (error) {
       console.error("Error fetching blogs:", error);
@@ -24,7 +29,7 @@ const AdminDashboard = () => {
 
   const handleCreateBlog = async () => {
     try {
-      await axios.post("http://localhost:3001/api/blogs", {
+      await axios.post("https://personal-portfolio-backend-6pbq.onrender.com/blogs", {
         title,
         content,
         images,
@@ -38,7 +43,7 @@ const AdminDashboard = () => {
 
   const handleDeleteBlog = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/api/blogs/${id}`);
+      await axios.delete(`https://personal-portfolio-backend-6pbq.onrender.com/blogs/${id}`);
       fetchBlogs();
     } catch (error) {
       console.error("Error deleting blog:", error);
@@ -55,7 +60,7 @@ const AdminDashboard = () => {
       };
 
       const response = await axios.put(
-        `http://localhost:3001/api/blogs/${id}`,
+        `https://personal-portfolio-backend-6pbq.onrender.com/blogs/${id}`,
         updatedBlog
       );
 
