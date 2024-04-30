@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import dotenv from "dotenv";
-
-dotenv.config();
-
-const BACKEND_URL = process.env.BACKEND_URL;
 
 const AdminDashboard = () => {
   const [blogs, setBlogs] = useState([]);
